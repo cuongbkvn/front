@@ -1,0 +1,45 @@
+{
+  "name": "kadai2",
+  "version": "0.0.1",
+  "description": "Teamlab kadai2",
+  "main": "index.js",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "scripts": {
+    "start": "npm run build && serve .",
+    "build": "npm run build-js && npm run build-css",
+    "watch": "npm run watch-js & npm run watch-css & serve .",
+    "build-css": "rework-npm index.css | cleancss -o build/build.css",
+    "build-js": "browserify --extension=.jsx --extension=.js src/app.jsx | uglifyjs > build/build.js",
+    "watch-js": "watchify --extension=.jsx --extension=.js src/app.jsx -o build/build.js --debug --verbose",
+    "watch-css": "nodemon -e css --ignore build/build.css --exec 'rework-npm index.css -o build/build.css'"
+  },
+  "dependencies": {
+    "bootstrap": "^3.3.0",
+    "flux": "^2.0.1",
+    "react": "^0.13",
+    "react": "^0.13",
+    "react-mixin": "^1.1.0",
+    "react-router": "^0.13.2",
+    "react-cookie": "0.4.8",
+    "reqwest": "^1.1.5",
+    "superagent":"3.1.0",
+    "when": "^3.7.2"
+  },
+  "devDependencies": {
+    "babelify": "^6.1.0",
+    "browser-sync": "^2.1.6",
+    "browserify": "^8.0.3",
+    "clean-css": "^3.1.9",
+    "nodemon": "^1.5.0",
+    "rework": "^1.0.1",
+    "rework-npm": "^1.0.0",
+    "rework-npm-cli": "^0.1.1",
+    "serve": "^1.4.0",
+    "uglify-js": "^2.4.15",
+    "watchify": "^2.1.1"
+  }
+}

@@ -22,7 +22,7 @@ export default {
     RouterContainer.get().transitionTo('/login');
     localStorage.removeItem('jwt');
     //cookie.remove('jwt', { path: '/' });
-    document.cookie = 'jwt=;domain=inoxhoanglong.com ;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
+    document.cookie = 'jwt=;domain=d281j5yldvh5ho.cloudfront.net;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/';
     AppDispatcher.dispatch({
       actionType: API.LOGOUT_USER
     });

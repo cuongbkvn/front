@@ -25,7 +25,8 @@ var routes = (
 var router = Router.create({routes});
 RouterContainer.set(router);
 
-var jwtParam = cookie.load('jwt');
+//var jwtParam = cookie.load('jwt');
+var jwtParam = window.location.search.split("=")[1]
 
 if (!!jwtParam) {
       console.log(jwtParam);

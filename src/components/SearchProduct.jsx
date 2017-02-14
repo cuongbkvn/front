@@ -30,7 +30,7 @@ export default AuthenticatedComponent(class SearchProduct extends React.Componen
   }
 
   changeKeyWord(e) {
-    this.setState({keyword: encodeURI(e.target.value}));
+    this.setState({keyword: encodeURI(e.target.value)});
   }
 
   render() {
